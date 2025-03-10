@@ -415,6 +415,8 @@ class MainWindow(QMainWindow):
         QMessageBox.critical(self, '转换错误', f'转换过程中发生错误:\n{error_msg}')
 
 def main():
+    os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling);
     app = QApplication(sys.argv)
     window = MainWindow()
     window.show()
